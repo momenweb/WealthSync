@@ -73,184 +73,86 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 pb-16 px-4 sm:px-6 overflow-hidden">
-        {/* Advanced Background Effects */}
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 overflow-hidden">
+        {/* Simplified Background Effects */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Animated Grid Pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
-          
-          {/* Dynamic Orbs */}
           <div
-            className="absolute top-1/4 -right-1/4 w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] bg-gradient-to-br from-amber-500/20 via-amber-400/10 to-transparent rounded-full blur-3xl animate-pulse-slow"
-            style={{ transform: `translateY(${scrollY * 0.3}px) rotate(${scrollY * 0.1}deg)` }}
+            className="absolute top-1/4 -right-1/4 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] bg-amber-500/10 rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
           />
           <div
-            className="absolute -top-1/4 -left-1/4 w-[500px] h-[500px] sm:w-[900px] sm:h-[900px] bg-gradient-to-br from-blue-500/10 via-slate-500/5 to-transparent rounded-full blur-3xl animate-pulse-slow"
-            style={{ transform: `translateY(${scrollY * 0.2}px) rotate(-${scrollY * 0.05}deg)` }}
+            className="absolute -top-1/4 -left-1/4 w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] bg-blue-500/5 rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
           />
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-transparent rounded-full blur-3xl"
-            style={{ transform: `translateY(${scrollY * 0.1}px) scale(${1 + scrollY * 0.0005})` }}
-          />
-          
-          {/* Floating Elements */}
-          <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-amber-400/40 rounded-full animate-ping" />
-          <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-blue-400/60 rounded-full animate-pulse" />
-          <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-emerald-400/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-8 order-2 lg:order-1">
-              {/* Enhanced Badge */}
-              <div className="inline-flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-amber-500/10 via-amber-400/5 to-transparent border border-amber-500/30 rounded-full text-sm text-amber-400 font-medium backdrop-blur-sm">
-                <div className="relative">
-                  <Sparkles className="w-4 h-4 animate-pulse" />
-                  <div className="absolute inset-0 w-4 h-4 bg-amber-400/20 rounded-full animate-ping" />
-                </div>
-                <span className="hidden sm:inline">AI-Powered Financial Advisory Platform</span>
-                <span className="sm:hidden">AI-Powered Platform</span>
-                <div className="flex items-center gap-1">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                  <span className="text-xs text-emerald-400 font-medium">Live</span>
-                </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+              {/* Simple Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-sm text-amber-400 font-medium">
+                <Sparkles className="w-4 h-4" />
+                <span className="hidden sm:inline">AI-Powered Client Management</span>
+                <span className="sm:hidden">AI-Powered</span>
               </div>
 
-              {/* Enhanced Headline */}
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-                  <span className="block text-white">Where Finance</span>
-                  <span className="block text-white">and Technology</span>
-                  <span className="block bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent">
-                    Stay in Sync
-                  </span>
-                </h1>
-                
-                <div className="flex items-center gap-2 text-amber-400/80">
-                  <div className="w-12 h-px bg-gradient-to-r from-amber-400 to-transparent" />
-                  <span className="text-sm font-medium">WealthSync™</span>
-                </div>
-              </div>
+              {/* Clean Headline */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+                Where Finance and Technology{' '}
+                <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent">
+                  Stay in Sync
+                </span>
+              </h1>
 
-              {/* Enhanced Description */}
-              <p className="text-xl sm:text-2xl text-slate-300 leading-relaxed max-w-2xl font-light">
-                Transform client relationships with our AI-powered platform that combines 
-                <span className="text-amber-400 font-medium"> intelligent automation</span>, 
-                <span className="text-emerald-400 font-medium"> real-time insights</span>, and 
-                <span className="text-blue-400 font-medium"> seamless communication</span> 
-                in one unified ecosystem.
+              {/* Simple Description */}
+              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+                WealthSync™ revolutionizes wealth management with AI-powered insights, 
+                automated client communication, and real-time portfolio monitoring.
               </p>
 
-              {/* Enhanced Stats */}
-              <div className="grid grid-cols-3 gap-6 py-8">
-                {[
-                  { value: '500+', label: 'Financial Advisors', color: 'amber', icon: '👥' },
-                  { value: '$2.5B+', label: 'Assets Under Management', color: 'emerald', icon: '💰' },
-                  { value: '98%', label: 'Client Satisfaction', color: 'blue', icon: '⭐' }
-                ].map((stat, idx) => (
-                  <div key={idx} className="group text-center p-4 rounded-xl bg-slate-900/30 border border-slate-800/50 hover:border-amber-500/30 transition-all duration-300 backdrop-blur-sm">
-                    <div className="text-2xl mb-2">{stat.icon}</div>
-                    <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
-                      stat.color === 'amber' ? 'text-amber-400' :
-                      stat.color === 'emerald' ? 'text-emerald-400' :
-                      'text-blue-400'
-                    }`}>
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-slate-400 leading-tight">{stat.label}</div>
-                  </div>
-                ))}
+              {/* Simple Stats */}
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6">
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-amber-400">500+</div>
+                  <div className="text-sm text-slate-400">Advisors</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-emerald-400">$2.5B+</div>
+                  <div className="text-sm text-slate-400">AUM</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">98%</div>
+                  <div className="text-sm text-slate-400">Satisfaction</div>
+                </div>
               </div>
 
-              {/* Enhanced CTA Buttons */}
+              {/* Simple CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-bold rounded-xl hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-3 text-lg overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-300 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="relative z-10">Start Free Trial</span>
-                  <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+                <button className="group px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-semibold rounded-lg hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-2">
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                
-                <button className="group px-8 py-4 border-2 border-amber-500/30 text-white font-bold rounded-xl hover:border-amber-500/60 hover:bg-amber-500/10 transition-all duration-300 flex items-center justify-center gap-3 text-lg backdrop-blur-sm">
-                  <div className="relative">
-                    <MessageSquare className="w-5 h-5" />
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                  </div>
-                  <span>Watch Demo</span>
+                <button className="px-8 py-4 border-2 border-amber-500/30 text-white font-semibold rounded-lg hover:border-amber-500/60 hover:bg-amber-500/5 transition-all duration-300 flex items-center justify-center gap-2">
+                  <MessageSquare className="w-5 h-5" />
+                  Watch Demo
                 </button>
               </div>
 
-              {/* Enhanced Trust Indicators */}
-              <div className="pt-6">
-                <p className="text-sm text-slate-400 mb-4 flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-emerald-400" />
-                  Trusted by leading financial institutions worldwide
-                </p>
-                <div className="flex items-center gap-6 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                  {['Goldman Sachs', 'Morgan Stanley', 'JP Morgan', 'Wells Fargo'].map((company, idx) => (
-                    <div key={idx} className="group relative">
-                      <div className="px-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-lg text-xs font-medium text-slate-300 group-hover:border-amber-500/30 group-hover:text-amber-400 transition-all duration-300 backdrop-blur-sm">
-                        {company}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* New: Key Features Preview */}
-              <div className="pt-8 space-y-4">
-                <h3 className="text-lg font-semibold text-white mb-4">Key Features</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    { icon: '🤖', text: 'AI-Powered Communication' },
-                    { icon: '📊', text: 'Real-Time Analytics' },
-                    { icon: '📅', text: 'Smart Scheduling' },
-                    { icon: '🔒', text: 'Enterprise Security' }
-                  ].map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-900/30 border border-slate-800/50 hover:border-amber-500/30 transition-all duration-300 backdrop-blur-sm">
-                      <span className="text-xl">{feature.icon}</span>
-                      <span className="text-sm text-slate-300">{feature.text}</span>
-                    </div>
-                  ))}
+              {/* Simple Trust Indicators */}
+              <div className="pt-4">
+                <p className="text-sm text-slate-400 mb-3">Trusted by leading financial institutions</p>
+                <div className="flex items-center gap-4 opacity-60">
+                  <div className="px-3 py-1 bg-slate-700/50 rounded text-xs font-medium">Goldman Sachs</div>
+                  <div className="px-3 py-1 bg-slate-700/50 rounded text-xs font-medium">Morgan Stanley</div>
+                  <div className="px-3 py-1 bg-slate-700/50 rounded text-xs font-medium">JP Morgan</div>
                 </div>
               </div>
             </div>
 
-            {/* Enhanced Dashboard Preview */}
+            {/* Simple Dashboard Preview */}
             <div className="relative order-1 lg:order-2">
-              <div className="relative">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-blue-500/20 rounded-3xl blur-3xl scale-110" />
-                
-                {/* Dashboard Container */}
-                <div className="relative">
-                  <DashboardIllustration />
-                </div>
-                
-                {/* Floating Action Cards */}
-                <div className="absolute -top-4 -left-4 p-3 bg-slate-900/90 border border-emerald-500/30 rounded-xl backdrop-blur-sm animate-bounce" style={{ animationDelay: '0.5s' }}>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                    <span className="text-xs text-emerald-400 font-medium">AI Processing</span>
-                  </div>
-                </div>
-                
-                <div className="absolute -bottom-4 -right-4 p-3 bg-slate-900/90 border border-amber-500/30 rounded-xl backdrop-blur-sm animate-bounce" style={{ animationDelay: '1s' }}>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-                    <span className="text-xs text-amber-400 font-medium">Live Updates</span>
-                  </div>
-                </div>
-              </div>
+              <DashboardIllustration />
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2 text-slate-400">
-            <span className="text-xs font-medium">Scroll to explore</span>
-            <ChevronRight className="w-4 h-4 rotate-90" />
           </div>
         </div>
       </section>
