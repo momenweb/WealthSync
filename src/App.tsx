@@ -88,63 +88,67 @@ function App() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
-              {/* Simple Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-sm text-amber-400 font-medium">
+            <div className="space-y-8 order-2 lg:order-1">
+              {/* Simplified Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 rounded-full text-sm text-amber-400 font-medium">
                 <Sparkles className="w-4 h-4" />
-                <span className="hidden sm:inline">AI-Powered Client Management</span>
-                <span className="sm:hidden">AI-Powered</span>
+                <span>AI-Powered Platform</span>
               </div>
 
-              {/* Clean Headline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
-                Where Finance and Technology{' '}
-                <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent">
-                  Stay in Sync
-                </span>
-              </h1>
+              {/* Cleaner Headline */}
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                  <span className="text-white">Smart Wealth</span><br />
+                  <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+                    Management
+                  </span>
+                </h1>
+                <p className="text-lg text-slate-400 font-light">
+                  AI that keeps you in sync with your clients
+                </p>
+              </div>
 
-              {/* Simple Description */}
-              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
-                WealthSync™ revolutionizes wealth management with AI-powered insights, 
-                automated client communication, and real-time portfolio monitoring.
+              {/* Simplified Description */}
+              <p className="text-xl text-slate-300 leading-relaxed max-w-lg">
+                Automate client communication, generate insights, and manage relationships 
+                with our intelligent financial advisory platform.
               </p>
 
-              {/* Simple Stats */}
-              <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6">
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-amber-400">500+</div>
-                  <div className="text-sm text-slate-400">Advisors</div>
+              {/* Compact Stats */}
+              <div className="flex items-center gap-8 py-4">
+                <div>
+                  <div className="text-2xl font-bold text-amber-400">500+</div>
+                  <div className="text-sm text-slate-500">Advisors</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-emerald-400">$2.5B+</div>
-                  <div className="text-sm text-slate-400">AUM</div>
+                <div>
+                  <div className="text-2xl font-bold text-emerald-400">$2.5B</div>
+                  <div className="text-sm text-slate-500">AUM</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">98%</div>
-                  <div className="text-sm text-slate-400">Satisfaction</div>
+                <div>
+                  <div className="text-2xl font-bold text-blue-400">98%</div>
+                  <div className="text-sm text-slate-500">Satisfaction</div>
                 </div>
               </div>
 
-              {/* Simple CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group px-8 py-4 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-semibold rounded-lg hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-2">
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {/* Cleaner CTA Buttons */}
+              <div className="flex gap-4">
+                <button className="px-6 py-3 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-semibold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300">
+                  Get Started
                 </button>
-                <button className="px-8 py-4 border-2 border-amber-500/30 text-white font-semibold rounded-lg hover:border-amber-500/60 hover:bg-amber-500/5 transition-all duration-300 flex items-center justify-center gap-2">
-                  <MessageSquare className="w-5 h-5" />
-                  Watch Demo
+                <button className="px-6 py-3 border border-amber-500/30 text-amber-400 font-semibold rounded-lg hover:bg-amber-500/10 transition-all duration-300">
+                  View Demo
                 </button>
               </div>
 
-              {/* Simple Trust Indicators */}
-              <div className="pt-4">
-                <p className="text-sm text-slate-400 mb-3">Trusted by leading financial institutions</p>
-                <div className="flex items-center gap-4 opacity-60">
-                  <div className="px-3 py-1 bg-slate-700/50 rounded text-xs font-medium">Goldman Sachs</div>
-                  <div className="px-3 py-1 bg-slate-700/50 rounded text-xs font-medium">Morgan Stanley</div>
-                  <div className="px-3 py-1 bg-slate-700/50 rounded text-xs font-medium">JP Morgan</div>
+              {/* Minimal Trust Indicators */}
+              <div className="pt-2">
+                <p className="text-xs text-slate-500 mb-2">Trusted by top firms</p>
+                <div className="flex items-center gap-3 text-xs text-slate-600">
+                  <span>Goldman Sachs</span>
+                  <span>•</span>
+                  <span>Morgan Stanley</span>
+                  <span>•</span>
+                  <span>JP Morgan</span>
                 </div>
               </div>
             </div>
