@@ -361,163 +361,73 @@ function App() {
 }
 
 function DashboardIllustration() {
-  const [activeClient, setActiveClient] = useState(0);
-  
-  const clients = [
-    { name: 'Sarah Johnson', portfolio: '$2.4M', change: '+12.3%', status: 'active' },
-    { name: 'Michael Chen', portfolio: '$1.8M', change: '+8.7%', status: 'pending' },
-    { name: 'Emily Rodriguez', portfolio: '$3.1M', change: '+15.2%', status: 'active' }
-  ];
-
   return (
     <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-blue-500/20 to-emerald-500/20 rounded-2xl sm:rounded-3xl blur-3xl animate-pulse-slow" />
+      <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-blue-500/20 rounded-2xl blur-3xl" />
 
-      <div className="relative bg-slate-900/95 backdrop-blur-xl border border-amber-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
-        {/* Enhanced Dashboard Header */}
-        <div className="flex items-center justify-between mb-4 sm:mb-6 lg:mb-8">
-          <div className="flex items-center gap-2 sm:gap-4">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg sm:rounded-xl flex items-center justify-center">
-              <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-slate-950" />
-            </div>
-            <div>
-              <div className="text-sm sm:text-lg font-bold text-white">WealthSync Dashboard</div>
-              <div className="text-xs sm:text-sm text-slate-400">Real-time Client Management</div>
-            </div>
+      <div className="relative bg-slate-900/95 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-6 shadow-2xl">
+        {/* Simple Header */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
+            <Sparkles className="w-5 h-5 text-slate-950" />
           </div>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="flex gap-1">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full" />
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-amber-500 rounded-full" />
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full" />
-            </div>
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-slate-800 rounded-full flex items-center justify-center">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse" />
-            </div>
+          <div>
+            <div className="text-lg font-bold text-white">WealthSync</div>
+            <div className="text-xs text-slate-400">Dashboard</div>
           </div>
         </div>
 
-        {/* Enhanced Stats Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-6 lg:mb-8">
-          {[
-            { value: '247', label: 'Active Clients', color: 'from-amber-500 to-amber-600', icon: TrendingUp },
-            { value: '94%', label: 'Engagement Rate', color: 'from-emerald-500 to-emerald-600', icon: BarChart3 },
-            { value: '12h', label: 'Time Saved/Week', color: 'from-blue-500 to-blue-600', icon: Zap },
-            { value: '$2.5B', label: 'AUM Managed', color: 'from-purple-500 to-purple-600', icon: Shield }
-          ].map((stat, idx) => (
-            <div key={idx} className="bg-slate-800/60 rounded-lg sm:rounded-xl p-2 sm:p-4 border border-slate-700/50 hover:border-amber-500/30 transition-all duration-300">
-              <div className="flex items-center justify-between mb-1 sm:mb-2">
-                <stat.icon className={`w-3 h-3 sm:w-5 sm:h-5 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`} />
-                <div className="text-xs text-emerald-400 font-medium">+5.2%</div>
-              </div>
-              <div className={`text-lg sm:text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>
-                {stat.value}
-              </div>
-              <div className="text-xs text-slate-400 leading-tight">{stat.label}</div>
-            </div>
-          ))}
+        {/* Key Stats */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
+            <div className="text-2xl font-bold text-amber-400 mb-1">247</div>
+            <div className="text-xs text-slate-400">Active Clients</div>
+          </div>
+          <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
+            <div className="text-2xl font-bold text-emerald-400 mb-1">$2.5B</div>
+            <div className="text-xs text-slate-400">AUM</div>
+          </div>
         </div>
 
-        {/* Portfolio Performance Chart */}
-        <div className="bg-slate-800/40 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-slate-700/40 mb-4 sm:mb-6">
-          <div className="flex items-center justify-between mb-3 sm:mb-4">
-            <h3 className="text-sm sm:text-lg font-semibold text-white">Portfolio Performance</h3>
-            <div className="flex gap-1 sm:gap-2">
-              <button className="px-2 sm:px-3 py-1 bg-amber-500/20 text-amber-400 text-xs rounded-lg">1Y</button>
-              <button className="px-2 sm:px-3 py-1 text-slate-400 text-xs rounded-lg hover:bg-slate-700/50">6M</button>
-              <button className="px-2 sm:px-3 py-1 text-slate-400 text-xs rounded-lg hover:bg-slate-700/50">3M</button>
-            </div>
+        {/* Simple Chart */}
+        <div className="bg-slate-800/40 rounded-xl p-4 border border-slate-700/40 mb-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-semibold text-white">Performance</h3>
+            <div className="text-xs text-emerald-400 font-medium">+24.7%</div>
           </div>
           
-          <div className="flex items-end justify-between h-24 sm:h-32 lg:h-40 gap-0.5 sm:gap-1 mb-3 sm:mb-4">
-            {[45, 52, 38, 65, 58, 72, 68, 85, 78, 92, 88, 95].map((height, idx) => (
-              <div key={idx} className="flex-1 flex flex-col justify-end group">
+          <div className="flex items-end justify-between h-20 gap-1">
+            {[40, 65, 45, 80, 55, 85, 70, 90].map((height, idx) => (
+              <div key={idx} className="flex-1 flex flex-col justify-end">
                 <div
-                  className="w-full bg-gradient-to-t from-amber-500/80 to-amber-400 rounded-t-sm opacity-80 group-hover:opacity-100 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30"
+                  className="w-full bg-gradient-to-t from-amber-500/80 to-amber-400 rounded-t-sm"
                   style={{ height: `${height}%` }}
                 />
-                <div className="text-xs text-slate-500 mt-1 sm:mt-2 text-center">
-                  {['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'][idx]}
-                </div>
               </div>
             ))}
           </div>
-          
-          <div className="flex items-center justify-between text-xs sm:text-sm">
-            <div className="text-emerald-400 font-medium">+24.7% YTD</div>
-            <div className="text-slate-400">vs S&P 500 +18.2%</div>
-          </div>
         </div>
 
-        {/* Client List with Interactive Elements */}
-        <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-          <h3 className="text-sm sm:text-lg font-semibold text-white mb-2 sm:mb-4">Recent Client Activity</h3>
-          {clients.map((client, idx) => (
-            <div 
-              key={idx}
-              className={`flex items-center gap-2 sm:gap-4 p-2 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 cursor-pointer ${
-                activeClient === idx 
-                  ? 'bg-amber-500/10 border-amber-500/50' 
-                  : 'bg-slate-800/30 border-slate-700/50 hover:border-amber-500/30'
-              }`}
-              onClick={() => setActiveClient(idx)}
-            >
-              <div className="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-slate-950 font-bold text-xs sm:text-sm">{client.name.split(' ').map(n => n[0]).join('')}</span>
+        {/* Recent Activity */}
+        <div className="space-y-3">
+          <h3 className="text-sm font-semibold text-white">Recent Activity</h3>
+          {[
+            { name: 'Sarah J.', change: '+12.3%', amount: '$2.4M' },
+            { name: 'Michael C.', change: '+8.7%', amount: '$1.8M' }
+          ].map((client, idx) => (
+            <div key={idx} className="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg border border-slate-700/50">
+              <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                <span className="text-slate-950 font-bold text-xs">{client.name.split(' ').map(n => n[0]).join('')}</span>
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-white text-sm sm:text-base truncate">{client.name}</span>
-                  <span className={`text-xs sm:text-sm font-medium ${client.change.startsWith('+') ? 'text-emerald-400' : 'text-red-400'} flex-shrink-0 ml-2`}>
-                    {client.change}
-                  </span>
+                  <span className="text-sm font-medium text-white">{client.name}</span>
+                  <span className="text-xs text-emerald-400 font-medium">{client.change}</span>
                 </div>
-                <div className="flex items-center justify-between text-xs sm:text-sm text-slate-400">
-                  <span className="truncate">{client.portfolio}</span>
-                  <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 ml-2">
-                    <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${client.status === 'active' ? 'bg-emerald-400' : 'bg-amber-400'}`} />
-                    <span className="text-xs">{client.status}</span>
-                  </div>
-                </div>
+                <div className="text-xs text-slate-400">{client.amount}</div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* AI Insights Panel */}
-        <div className="bg-gradient-to-r from-amber-500/10 to-blue-500/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-amber-500/20">
-          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-slate-950" />
-            </div>
-            <h3 className="text-sm sm:text-lg font-semibold text-white">AI Insights</h3>
-          </div>
-          
-          <div className="space-y-2 sm:space-y-3">
-            <div className="flex items-start gap-2 sm:gap-3">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
-              <div>
-                <p className="text-xs sm:text-sm text-slate-300">Portfolio rebalancing recommended for 3 clients</p>
-                <p className="text-xs text-slate-400 mt-0.5 sm:mt-1">Based on market volatility analysis</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-2 sm:gap-3">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
-              <div>
-                <p className="text-xs sm:text-sm text-slate-300">Client communication scheduled for tomorrow</p>
-                <p className="text-xs text-slate-400 mt-0.5 sm:mt-1">5 personalized reports ready for review</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-2 sm:gap-3">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-amber-400 rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
-              <div>
-                <p className="text-xs sm:text-sm text-slate-300">Risk assessment updated for Q4</p>
-                <p className="text-xs text-slate-400 mt-0.5 sm:mt-1">New compliance requirements detected</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
